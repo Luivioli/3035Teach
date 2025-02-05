@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tarefa 4</title>
+</head>
+<body>
+    <p class="troca">>Aleatório<</p>
+    <div>
+        <button onclick="funcao()">Trocar de cor</button>
+    </div>
+
+    <script>
+        function funcao() {
+            const cores = ["#ff0000", "#0000ff", "#3cb371", "#ffa500", "#6a5acd", "#d4ac0d", "#d68910", "#58d68d", "#16a085", "#7b7d7d", "#2e86c1"];
+            let cor = cores[Math.floor(Math.random() * cores.length)];
+            console.log(cor);
+
+            document.querySelector(".troca").style.backgroundColor = cor;
+        }
+    </script>
+</body>
+</html>
