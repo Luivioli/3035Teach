@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tarefa 5</title>
+</head>
+<body>
+    <div id="container">
+        <div id="console">
+            <input type="text" id="visor" readonly>
+        </div>
+        <div id="um"><button onclick="clique('1')" class="numero">1</button></div>
+        <div id="dois"><button onclick="clique('2')" class="numero">2</button></div>
+        <div id="tres"><button onclick="clique('3')" class="numero">3</button></div>
+        <div id="quatro"><button onclick="clique('4')" class="numero">4</button></div>
+        <div id="cinco"><button onclick="clique('5')" class="numero">5</button></div>
+        <div id="seis"><button onclick="clique('6')" class="numero">6</button></div>
+        <div id="sete"><button onclick="clique('7')" class="numero">7</button></div>
+        <div id="oito"><button onclick="clique('8')" class="numero">8</button></div>
+        <div id="nove"><button onclick="clique('9')" class="numero">9</button></div>
+        <div id="zero"><button onclick="clique('0')" class="numero">0</button></div>
+        <div id="mais"><button onclick="clique(' + ')" class="operacao">+</button></div>
+        <div id="menos"><button onclick="clique(' - ')" class="operacao">-</button></div>
+        <div id="vezes"><button onclick="clique(' * ')" class="operacao">x</button></div>
+        <div id="divide"><button onclick="clique(' / ')" class="operacao">&divide</button></div>
+        <div id="igual"><button onclick="clique(' = ')">=</button></div>
+    </div>
+
+    <script>
+
+        function clique(valor){
+            let visor = document.getElementById("visor");
+            valor = (valor == ' = ') ? resultado(visor) : valor;
+            
+            let valorVisor = visor.value;
+            valor = (valor.includes(' ') && valorVisor.includes(' ')) ? '' : valor;
+            valorVisor = (valorVisor == null || valorVisor == undefined) ? valor : valorVisor + valor;
+            valorVisor = (valorVisor == ' + ') ? '' : valorVisor;
+            valorVisor = (valorVisor == ' - ') ? '' : valorVisor;
+            valorVisor = (valorVisor == ' * ') ? '' : valorVisor;
+            valorVisor = (valorVisor == ' / ') ? '' : valorVisor;
+           
+            visor.value = valorVisor;
+            
+        }
+
+        function resultado(visor) { 
+            let exprecao = visor.value;
+            let segmentos = exprecao.split(' ');
+            let resposta = (segmentos.length == 3) ? '' + eval(exprecao) : exprecao;
+
+            visor.value = resposta;
+
+            return (resposta == exprecao) ? resposta : '';
+        }
+
+        
+    </script>
+</body>
+</html>

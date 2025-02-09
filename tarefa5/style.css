@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(177, 177, 177);
+}
+
+#container {
+    display: grid;
+    height: 80vh;
+    width: 60vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "console console console console"
+    "um dois tres mais"
+    "quatro cinco seis menos"
+    "sete oito nove vezes"
+    "zero igual igual divide";
+}
+
+input {
+    width: 100%;
+}
+
+button {
+    font-size: large;
+    border: 1px solid black;
+    border-radius: 13px;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+#console {
+    margin-top: 5vh;
+    grid-area: console;
+    border: 3px solid;
+    background-color: white;
+    display: flex;
+}
+
+.numero {
+    background: linear-gradient(90deg, rgba(29,109,253,1) 20%, rgba(130,174,255,1) 100%);
+}
+
+.numero:hover {
+    background: linear-gradient(90deg, rgba(130,174,255,1) 20%, rgba(29,109,253,1) 100%);
+}
+
+.operacao {
+    background: linear-gradient(90deg, rgba(255,123,0,1) 20%, rgba(255,166,82,1) 100%);
+}
+
+.operacao:hover {
+    background: linear-gradient(90deg, rgba(255,166,82,1) 20%, rgba(255,123,0,1) 100%);
+}
+
+#um {
+    grid-area: um;
+}
+
+#dois {
+    grid-area: dois;
+}
+
+#tres {
+    grid-area: tres;
+}
+
+#quatro {
+    grid-area: quatro;
+}
+
+#cinco {
+    grid-area: cinco;
+}
+
+#seis {
+    grid-area: seis;
+}
+
+#sete {
+    grid-area: sete;
+}
+
+#oito {
+    grid-area: oito;
+}
+
+#nove {
+    grid-area: nove;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#mais {
+    grid-area: mais;
+}
+
+#menos {
+    grid-area: menos;
+}
+
+#vezes {
+    grid-area: vezes;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#igual {
+    grid-area: igual;
+}
+
+#igual>button {
+    background-color: white;
+}
+
+#igual>button:hover {
+    background: linear-gradient(0deg, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 75%);
+}
