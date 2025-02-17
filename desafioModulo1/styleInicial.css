@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(0deg, rgba(219,192,54,1) 0%, rgba(255,255,255,1) 80%);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas: "navbar"
+    "form"
+    "footer";
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+a {
+    text-decoration: none;
+    color: #dbc036;
+    cursor: pointer;
+    margin-left: 3vw;
+}
+
+#logo {
+    height:20vh;
+    width: 15vw;
+}
+
+#container {
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
